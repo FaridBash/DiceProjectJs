@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Dice Game</title>
+</head>
+<body>
+    <main>
+        <section class="dices">
+
+        </section>
+        <div class="left arrange">
+            <h3>Player 1</h3>
+            <h1 id='player1Total'>0</h1>
+            <div class="box">
+                <p>Current</p>
+                <p id="cur-player-1">0</p>
+            </div>
+        </div>
+        <div class="right arrange">
+            <h3>Player 2</h3>
+            <h1 id='player2Total'>0</h1>
+            <div class="box">
+                <p>Current</p>
+                <p id="cur-player-2">0</p>
+            </div>
+        </div>
+
+        <section class="control">
+            <button class="control-btn" id="newgame-btn"> New Game</button>
+            <img src="./img/dice-1.png" alt="" class="dice" id="dice-1">
+            <img src="./img/dice-1.png" alt="" class="dice" id="dice-2">
+            <button class="control-btn" id="roll-btn">Roll Dice</button>
+            <button class="control-btn" id='hold-btn'> Hold</button>
+        </section>
+
+        <section class="start-game" id="start-screen">
+            <ul>
+                <h5>Game Instructions</h5>
+                <li>In your turn - roll the dice (at least once) and accumulate the result in "current". </li>
+                <li>You can roll again or click "Hold" to save the points from "Current" and end the turn. </li>
+                <li>Note!! if you get 6-6- you will lose all points from "current" and the turn will go to your opponent.</li>
+                <li>If you managed to reach the target score - you win! if you passed it - you lose...</li>
+            </ul>
+            <h4>Please select a target score</h4>
+            <input type="number" min="2" id="game-score-input">
+            <button id="start-game-btn">Start Game</button>
+        </section>
+    </main>
+
+</body>
+<script src="app.js"></script>
+</html>
