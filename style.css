@@ -60,7 +60,8 @@ main{
     padding: 1rem;
     position: absolute;
     top: 0;
-    left: 49.5%;
+    right: 0;
+    /* left: 49.5%; */
 }
 
 .box{
@@ -192,6 +193,9 @@ main{
     }
   }
   
-  .apply-shake {
+  .dice {
       animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
   }
+  /* .apply-shake2 {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+} */
