@@ -34,7 +34,12 @@ let player1Name=document.getElementById('player1Name');
 let player2Name=document.getElementById('player2Name');
 const player1NameHolder=document.getElementById('name1');
 const player2NameHolder=document.getElementById('name2');
-
+const yourTurn1=document.getElementById('your-turn1');
+const yourTurn2=document.getElementById('your-turn2');
+yourTurn1.style.display='none';
+yourTurn2.style.display='none';
+// const yourTurnHolder1=document.getElementById('player1Total');
+// const yourTurnHolder2=document.getElementById('player2Total');
 const player1Total=document.getElementById('player1Total');
 const player2Total=document.getElementById('player2Total');
 
@@ -101,6 +106,8 @@ function checkWinner(){
         player1wins+=1;
         Players[player1Name.value]=player1wins;
         console.log(Players);
+        yourTurn1.style.display='none';
+        yourTurn2.style.display='none';
         return true;
     }
     else if(player2Totals===gameUpTo){
@@ -110,6 +117,8 @@ function checkWinner(){
         player2wins+=1;
         Players[player2Name.value]=player2wins;
         console.log(Players);
+        yourTurn1.style.display='none';
+        yourTurn2.style.display='none';
         return true;
     }
     else if(player1Totals>gameUpTo){
@@ -119,6 +128,8 @@ function checkWinner(){
         player2wins+=1;
         Players[player2Name.value]=player2wins;
         console.log(Players);
+        yourTurn1.style.display='none';
+        yourTurn2.style.display='none';
         return true;
         
     }
@@ -130,8 +141,11 @@ function checkWinner(){
         player1wins+=1;
         Players[player1Name.value]=player1wins;
         console.log(Players);
+        yourTurn1.style.display='none';
+        yourTurn2.style.display='none';
         return true;
     }
+
     return false;
     
 }
@@ -162,6 +176,17 @@ startBtn.addEventListener('click', e=>{
         // console.log(playerObj);
         player1th.innerText=player1Name.value;
         player2th.innerText=player2Name.value;
+
+        if(player1===true){
+            yourTurn1.style.display='block';
+            yourTurn2.style.display='none';
+        }
+        else if(player1===false){
+            yourTurn2.style.display='block';
+            yourTurn1.style.display='none';
+        }
+        
+
     }
     
     else if(player1Name.value.length===0){
@@ -214,6 +239,16 @@ roll.addEventListener('click', e=>{
             double6Display();
             // setTimeout(double6Display(), 3000);
             setTimeout(double6Hide, 2000);
+
+            if(player1===true){
+                yourTurn1.style.display='block';
+                yourTurn2.style.display='none';
+            }
+            else if(player1===false){
+                yourTurn2.style.display='block';
+                yourTurn1.style.display='none';
+            }
+            
             
         }
     }
@@ -230,9 +265,27 @@ roll.addEventListener('click', e=>{
             // setTimeout(double6Display(), 3000);
             setTimeout(double6Hide, 2000);
 
+            if(player1===true){
+                yourTurn1.style.display='block';
+                yourTurn2.style.display='none';
+            }
+            else if(player1===false){
+                yourTurn2.style.display='block';
+                yourTurn1.style.display='none';
+            }
+            
             
         }
         
+    }
+
+    if(player1===true){
+        yourTurn1.style.display='block';
+        yourTurn2.style.display='none';
+    }
+    else if(player1===false){
+        yourTurn2.style.display='block';
+        yourTurn1.style.display='none';
     }
     
     
@@ -266,6 +319,17 @@ holdBtn.addEventListener('click',e=>{
             player2td.innerText=Players[player2Name.value];
         }
     }
+
+    if(player1===true){
+        yourTurn1.style.display='block';
+        yourTurn2.style.display='none';
+    }
+    else if(player1===false){
+        yourTurn2.style.display='block';
+        yourTurn1.style.display='none';
+    }
+    
+
 });
 
 newGameBtn.addEventListener('click',e=>{

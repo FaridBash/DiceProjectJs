@@ -281,6 +281,42 @@ th, td{
 }
 
 
+#your-turn1{
+    width: 12%;
+    height: 10%;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 2%;
+    font-size: 0.7rem;
+    /* text-align: center; */
+    border-radius: 15px;
+    background: #84fab0;
+    /* display: none; */
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    z-index: 5;
+    
+
+
+}
+#your-turn2{
+    width: 12%;
+    height: 10%;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 2%;
+    font-size: 0.7rem;
+    /* text-align: center; */
+    border-radius: 15px;
+    background: #84fab0;
+    display: none;
+    position: absolute;
+    top: 30%;
+    right: 5%;
+    z-index: 5;
+}
+
 @keyframes shake {
     10%, 90% {
       transform: translate3d(-1px, 0, 0);
@@ -387,5 +423,19 @@ th, td{
         left: 10%;
         top: 65%;
         font-size: 1rem;
+    }
+
+    #your-turn1{
+        width: 20%;
+        height: 5%;
+        top: 25%;
+    }
+    #your-turn2{
+        width: 20%;
+        height: 5%;
+        top: 65%;
+        left: 5%;
+        /* display: block; */
+
     }
 }
