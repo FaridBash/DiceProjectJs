@@ -144,24 +144,35 @@ let player1=true;
 
 startBtn.addEventListener('click', e=>{
 
-    if(gameScoreInput.value.length>0){
+    if(player1Name.value.length>0 && player2Name.value.length>0 && gameScoreInput.value.length>0){
+        
         gameUpTo=Number(gameScoreInput.value);
         gameStartScreen.style.display='none';
         playStartAudio();
+        
+        player1NameHolder.innerText=player1Name.value.toUpperCase();
+        player2NameHolder.innerText=player2Name.value.toUpperCase();
+        
+        Players[player1Name.value]=player1wins;
+        Players[player2Name.value]=player2wins;
+        // Players.push(playerObj['playerN']=player1Name.value);
+        // Players.push(playerObj['wins']=player1wins);
+        // Players.push(playerObj['playerN']=player2Name.value);
+        // Players.push(playerObj['wins']=player2wins);
+        // console.log(playerObj);
+        player1th.innerText=player1Name.value;
+        player2th.innerText=player2Name.value;
     }
-    player1NameHolder.innerText=player1Name.value.toUpperCase();
-    player2NameHolder.innerText=player2Name.value.toUpperCase();
-
-    Players[player1Name.value]=player1wins;
-    Players[player2Name.value]=player2wins;
-    // Players.push(playerObj['playerN']=player1Name.value);
-    // Players.push(playerObj['wins']=player1wins);
-    // Players.push(playerObj['playerN']=player2Name.value);
-    // Players.push(playerObj['wins']=player2wins);
-    // console.log(playerObj);
-    player1th.innerText=player1Name.value;
-    player2th.innerText=player2Name.value;
     
+    else if(player1Name.value.length===0){
+        player1Name.focus();
+    }
+    else if(player2Name.value.length===0){
+        player2Name.focus();
+    }
+    else if(gameScoreInput.value.length===0){
+        gameScoreInput.focus();
+    }
 
 });
 

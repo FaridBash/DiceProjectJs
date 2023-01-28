@@ -315,8 +315,8 @@ th, td{
         display: flex;
         flex-direction: column;
         align-items: center;
-        left: 2.5%;
-        display: none;
+        left: 1%;
+        /* display: none; */
     }
     .start-game ul{
         padding:0 2rem ;
@@ -360,22 +360,27 @@ th, td{
     }
 
     .control{
-        width: 30%;
+        width: 40%;
         height: 80%;
-        margin-right: 2rem;
+        margin-right: 3rem;
         border: 1px solid #84fab0;
         border-radius: 15px;
         justify-content: flex-start;
         position: absolute;
-        left: 60%;
+        left: 55%;
         top: 9%;
     }
     .control button{
         width: 90%;
         height: 5%;
         opacity: 1;
+        font-size: 0.6rem;
     }
-
+    #score-btn{
+        /* position: absolute; */
+        /* bottom: 1rem; */
+        margin-top: 5%;
+    }
     table{
         width: 80%;
         height: 20%;
