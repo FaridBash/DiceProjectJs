@@ -8,11 +8,17 @@
     <title>Dice Game</title>
 </head>
 <body>
+    <audio id="audio-start">
+        <source src="./sound/dice-throw-38476.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="audio-roll">
+        <source src="./sound/dice-on-a-wooden-floor-87441.mp3" type="audio/mpeg">
+    </audio>
     <main>
         <section class="dices">
         </section>
         <div class="left arrange">
-            <h3>Player 1</h3>
+            <h3 id="name1"></h3>
             <h1 id='player1Total'>0</h1>
             <div class="box">
                 <p>Current</p>
@@ -20,7 +26,7 @@
             </div>
         </div>
         <div class="right arrange">
-            <h3>Player 2</h3>
+            <h3 id="name2"></h3>
             <h1 id='player2Total'>0</h1>
             <div class="box">
                 <p>Current</p>
@@ -34,6 +40,7 @@
             <img src="./img/dice-1.png" alt="" class="dice" id="dice-2">
             <button class="control-btn" id="roll-btn">Roll Dice</button>
             <button class="control-btn" id='hold-btn'> Hold</button>
+            <button class="control-btn" id="score-btn">Show Score</button>
         </section>
 
         <section class="start-game" id="start-screen">
@@ -44,10 +51,36 @@
                 <li>Note!! if you get 6-6- you will lose all points from "current" and the turn will go to your opponent.</li>
                 <li>If you managed to reach the target score - you win! if you passed it - you lose...</li>
             </ul>
-            <h4>Please select a target score</h4>
-            <input type="number" min="2" id="game-score-input">
-            <button id="start-game-btn">Start Game</button>
+            <section class="input-holder">
+                <section class="input-section">
+                    <input type="text" placeholder="Player 1 name" id="player1Name">
+                    <input type="text" placeholder="Player 2 name" id="player2Name">
+                    <input type="number" min="2" id="game-score-input" placeholder="Target score">
+                    <button id="start-game-btn">Start Game</button>
+                </section>
+            </section>
         </section>
+        <section id="delay-message">
+            <h5>You got </h5>
+            <img src="./img/dice-6.png" alt="" class="dice" id="dice-6"><img src="./img/dice-6.png" alt="" class="dice" id="dice-62">
+            <h5>Sooo your score is <b>0</b> and your turn is over </h5>
+        </section>
+
+        <table id="table">
+            <tr>
+                <th>Player</th>
+                <th>Wins</th>
+            </tr>
+            <tr>
+                <td id="table-player1-name">Player1</td>
+                <td id="table-player1-score">0</td>
+            </tr>
+            <tr>
+                <td id="table-player2-name">Player</td>
+                <td id="table-player2-score">0</td>
+            </tr>
+
+        </table>
     </main>
 
 </body>
