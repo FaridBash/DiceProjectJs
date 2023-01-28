@@ -190,7 +190,7 @@ roll.addEventListener('click', e=>{
             player1=false;
             double6Display();
             // setTimeout(double6Display(), 3000);
-            setTimeout(double6Hide, 5000);
+            setTimeout(double6Hide, 2000);
             
         }
     }
@@ -205,7 +205,7 @@ roll.addEventListener('click', e=>{
             player1=true;
             double6Display();
             // setTimeout(double6Display(), 3000);
-            setTimeout(double6Hide, 5000);
+            setTimeout(double6Hide, 2000);
 
             
         }
