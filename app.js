@@ -1,6 +1,7 @@
 const Players={};
-let player1wins=0;
+// const playerObj={};
 let player2wins=0;
+let player1wins=0;
 
 const getPlayer=()=>{
     return getRandomNumber(1);
@@ -153,7 +154,11 @@ startBtn.addEventListener('click', e=>{
 
     Players[player1Name.value]=player1wins;
     Players[player2Name.value]=player2wins;
-
+    // Players.push(playerObj['playerN']=player1Name.value);
+    // Players.push(playerObj['wins']=player1wins);
+    // Players.push(playerObj['playerN']=player2Name.value);
+    // Players.push(playerObj['wins']=player2wins);
+    // console.log(playerObj);
     player1th.innerText=player1Name.value;
     player2th.innerText=player2Name.value;
     
@@ -170,6 +175,13 @@ const roll=document.getElementById('roll-btn');
 roll.addEventListener('click', e=>{
     e.preventDefault();
     // console.log("rol clicked");
+    dice1.classList.toggle('apply-shake2');
+    dice2.classList.toggle('apply-shake2');
+    // dice1.classList.toggle('apply-shake2');
+    // dice2.classList.toggle('apply-shake2');
+    // setTimeout(dice1.classList.toggle('apply-shake2'), 2000);
+    // setTimeout(dice2.classList.toggle('apply-shake2'), 1000);
+
     pauseStartAudio();
     playRollAudio();
     const num1=getRandomNumber(6);
